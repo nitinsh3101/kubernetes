@@ -1,0 +1,11 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nginx-storage
+provisioner: pd.csi.storage.gke.io
+parameters:
+  type: pd-balanced
+  fstype: ext4
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+allowVolumeExpansion: true
